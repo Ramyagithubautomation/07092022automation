@@ -1,0 +1,27 @@
+package FirstPackage;
+
+public class DataTypes {
+
+	byte bytenumber=127;   //-128 to +127
+	short shortnumber=259;
+	int intnumber=3456;
+	long longnumber=123456l;
+	float floatvalue=1.2f;
+	double doublevalue=1.2d;
+	char charvalue='1';
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

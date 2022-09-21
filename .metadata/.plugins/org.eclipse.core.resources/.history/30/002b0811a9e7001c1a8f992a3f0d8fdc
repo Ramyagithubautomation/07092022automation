@@ -1,0 +1,19 @@
+
+public abstract class AbstractClasss {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public void method()
+	{
+		System.out.println("this is method");
+	}
+	
+	public abstract void  method1();
+	
+	
+	
+
+}

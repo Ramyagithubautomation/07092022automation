@@ -1,0 +1,20 @@
+
+public class Variables {
+	
+	
+	public static String collegename;//stored in method area
+
+	public static void main(String[] args) {
+		
+		int value1=123;  //primitive variable
+		
+		Variables Suresh=new Variables(); //reference variable
+		System.out.println(Suresh.collegename);
+		
+		Variables Naresh=new Variables();
+		
+		System.out.println(Naresh.collegename);
+
+	}
+
+}

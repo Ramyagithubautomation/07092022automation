@@ -1,0 +1,28 @@
+
+public class Variables {
+	
+	
+	public static String collegename="vnr";//stored in method area
+	
+	int rollno=1; //instance variable -> heap memory area
+
+	public static void main(String[] args) {
+		
+		int value1=123;  //primitive variable
+		
+		Variables Suresh=new Variables(); //reference variable
+		System.out.println(collegename);
+		
+		Variables Naresh=new Variables();
+		
+		System.out.println(collegename);
+
+	}
+	
+	
+	public void method()
+	{
+		System.out.println(collegename);
+	}
+
+}

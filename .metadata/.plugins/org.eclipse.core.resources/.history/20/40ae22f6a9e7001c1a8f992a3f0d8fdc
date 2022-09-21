@@ -1,0 +1,21 @@
+
+public class ChildClass extends AbstractClasss{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void method() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void method1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

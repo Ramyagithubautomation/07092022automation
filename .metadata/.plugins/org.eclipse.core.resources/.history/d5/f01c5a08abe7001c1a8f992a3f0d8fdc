@@ -1,0 +1,17 @@
+
+public interface RBIInterface {
+
+	//requirement specification
+	
+	public void MinNoOfCustomers();
+	
+	public void loanInterestRate();
+	
+	
+	
+	
+	
+	
+	
+	
+}

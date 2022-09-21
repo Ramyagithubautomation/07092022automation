@@ -1,0 +1,70 @@
+package SeleniumTraining;
+
+import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class FirstSeleniumProgram {
+	public static WebDriver driver=null;
+
+	public static void main(String[] args) {
+		
+		
+		
+		Amazoninvoke("chrome");
+		getTitle();
+		//closeAndQuit();
+		
+		
+		
+
+	}
+
+	
+	
+	public static void Amazoninvoke(String browser)
+	{
+		
+		if(browser.equals("chrome"))
+		{
+			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+			driver=new ChromeDriver(); //chrome browser is invoked //runtime polymorphysim
+		}
+		
+		if(browser.equals("firefox"))
+		{
+			System.setProperty("webdriver.gecko.driver", "./drivers/chromedriver.exe");
+			driver=new FirefoxDriver();
+		}
+	}
+	
+	public static void getTitle()
+	{
+		String ExpectedTitle="Amazon.com. Spend less. Smile more.";
+		driver.get("https://www.amazon.com");
+		String Actualtitle=driver.getTitle();
+	}
+	
+	
+	
+	public static void manage()
+	{
+		
+		
+		
+		
+	}
+	
+	public static void closeAndQuit()
+	{
+		
+		driver.close();  //it closes the current instance that is opened
+		driver.quit(); //it closes all the instances that are opened
+		
+	}
+	
+	
+	
+}

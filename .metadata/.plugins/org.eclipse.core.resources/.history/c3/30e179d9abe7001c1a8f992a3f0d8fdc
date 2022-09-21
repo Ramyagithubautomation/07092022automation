@@ -1,0 +1,19 @@
+
+public interface RBIInterface {
+
+	//requirement specification
+	
+	public int minloanamount=1000; //by default thos var is public, static and final
+	
+	public void MinNoOfCustomers();
+	
+	public void loanInterestRate();
+	
+	
+	
+	
+	
+	
+	
+	
+}

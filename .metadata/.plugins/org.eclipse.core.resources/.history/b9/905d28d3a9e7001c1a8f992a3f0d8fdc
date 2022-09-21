@@ -1,0 +1,19 @@
+
+public abstract class AbstractClasss {
+
+	
+	//we can acheieve 0% astraction also
+	//we can achieve 100% also
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public abstract void method();
+	
+//	public abstract void  method1();
+	
+	
+	
+
+}

@@ -1,0 +1,17 @@
+
+public class SttaicInstanceVar {
+
+	public static int var=123;
+	
+	public int var1=678;
+	
+	
+	public static void main(String []args)
+	{
+		
+	}
+	
+	
+	
+	
+}

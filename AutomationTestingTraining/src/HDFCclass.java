@@ -1,0 +1,18 @@
+
+public class HDFCclass implements RBIInterface{
+
+	@Override
+	public void MinNoOfCustomers() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void loanInterestRate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+}

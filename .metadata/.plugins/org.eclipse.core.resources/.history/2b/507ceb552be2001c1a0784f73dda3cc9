@@ -1,0 +1,32 @@
+
+public class SttaicInstanceVar {
+
+	public static int var=123;
+	
+	public int var1=678;
+	
+	
+	public static void main(String []args)
+	{
+		
+		SttaicInstanceVar object=new SttaicInstanceVar();
+		
+		object.var=345;
+		
+		object.var1=456;
+		
+		System.out.println(object.var);
+		System.out.println(object.var1);
+		
+		
+		SttaicInstanceVar object1=new SttaicInstanceVar();
+		
+		System.out.println(object1.var);
+		
+		
+	}
+	
+	
+	
+	
+}

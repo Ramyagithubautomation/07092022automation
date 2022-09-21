@@ -1,0 +1,36 @@
+
+public class Swift extends Car{
+	public int seatbelt=2;
+	
+	public static void main(String[] args)
+	{
+		
+		Swift swiftDesire=new Swift();
+		System.out.println(swiftDesire.no_of_wheels);
+		swiftDesire.speed();
+		swiftDesire.engine();
+		swiftDesire.autodriving();
+		
+		Car car=new Car();
+		//car.engine();
+		//car.autodriving(); //incorrect way
+		
+		Car car1=new Swift(); //run time ploymorphysim
+		car1.engine();//it calls child class engine method or overriding
+		//car1.autodriving(); //incorrect way
+		
+		
+		
+	}
+	
+	public static int engine()
+	{
+		System.out.println("this is swift class engine method");
+	}
+	
+	public void autodriving()
+	{
+		System.out.println("this is a special feature for swift only");
+	}
+
+}

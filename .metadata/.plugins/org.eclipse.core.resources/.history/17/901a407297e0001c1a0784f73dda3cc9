@@ -1,0 +1,22 @@
+
+public class FirstProgram {
+
+	public static void main(String[] args) {
+		//System.out.println("Hello ramya");
+	
+		//int abc$=3;
+		//int System=3;
+		//int abc123=3;
+		
+		byte age=-127;
+		short age1=129;
+		int age2=1234;
+		long age3=12345;
+		System.out.println(age3);
+		
+	}
+	
+	
+	
+	
+}
