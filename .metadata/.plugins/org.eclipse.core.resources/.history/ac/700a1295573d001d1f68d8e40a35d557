@@ -1,0 +1,14 @@
+package FirstPackage;
+
+public class accessmodifiersclass {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+		
+	}
+
+}

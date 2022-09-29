@@ -1,0 +1,20 @@
+package FirstPackage;
+
+public class accessmodifiersclass {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public void publicmethod()
+	{
+		System.out.println("publicmethod");
+	}
+
+}

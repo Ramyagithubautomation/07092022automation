@@ -1,0 +1,26 @@
+package FirstPackage;
+
+public class Students {
+
+	static String collageName;
+	static int studentscount;
+
+	
+	
+	
+	public static void main(String[] args) {
+       
+		Students Meghana=new Students();
+		System.out.println(Students.collageName);
+		System.out.println(studentscount);
+		
+		Students Swapna=new Students();
+		System.out.println(collageName);
+		
+		
+		
+		
+		
+	}
+
+}

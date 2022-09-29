@@ -1,0 +1,51 @@
+package FirstPackage;
+
+public class Flowcontrolstatements {
+
+	public static void main(String[] args) {
+
+		
+		System.out.println(tax(20000));
+		forloop();
+		
+		
+		
+		
+	}
+	
+	
+	public static int tax(int salary)
+	{
+		int taxpercentage=0;
+		
+		if(salary>0 && salary<10000)
+		{
+			taxpercentage=5;
+			
+		}
+		
+		else
+		{
+			taxpercentage=10;
+		}
+		
+		return taxpercentage;
+	}
+	
+	
+	public static void forloop() {
+		
+		int[] studentrollnoarray=new int[100];
+		
+		for(int i=0;i<studentrollnoarray.length;i++)
+		{
+			studentrollnoarray[i]=i;
+			System.out.println(studentrollnoarray[i]);	
+		}
+		
+		
+		
+	}
+	
+
+}

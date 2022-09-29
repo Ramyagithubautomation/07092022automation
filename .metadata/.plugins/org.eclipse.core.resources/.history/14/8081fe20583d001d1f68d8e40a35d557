@@ -1,0 +1,10 @@
+package SecondPackage;
+
+public class SecondPackageclass {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

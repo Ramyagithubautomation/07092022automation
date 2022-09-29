@@ -1,0 +1,29 @@
+package FirstPackage;
+
+public class Students {
+
+	static String collageName="vnr";
+	static int studentscount;
+	int rollno;
+
+	
+	
+	
+	public static void main(String[] args) {
+       
+		Students Meghana=new Students();
+		System.out.println(Students.collageName);
+		System.out.println(studentscount);
+		Meghana.rollno=1;
+		
+		Students Swapna=new Students();
+		System.out.println(collageName);
+		Swapna.rollno=2;
+		
+		
+		
+		
+		
+	}
+
+}

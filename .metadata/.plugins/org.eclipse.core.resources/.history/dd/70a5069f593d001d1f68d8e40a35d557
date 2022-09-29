@@ -1,0 +1,28 @@
+package FirstPackage;
+
+public class accessmodifiersclass {
+	
+	public int publicvar=10;
+	protected int protectvar=20;
+	int defaultvar=30;
+	private privatevar=40;
+
+	public static void main(String[] args) {
+		
+		
+		accessmodifiersclass modify=new accessmodifiersclass();
+		
+		System.out.println(modify.publicvar);
+        modify.publicmethod();
+        System.out.println(modify.protectvar);
+        System.out.println(modify.defaultvar);
+
+	}
+	
+	
+	public void publicmethod()
+	{
+		System.out.println("publicmethod");
+	}
+
+}
