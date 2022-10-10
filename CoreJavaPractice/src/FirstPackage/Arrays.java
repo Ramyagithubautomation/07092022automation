@@ -50,12 +50,12 @@ public class Arrays {
 		
         Random random=new Random();
 		
-		for(int i=0;i<2;i++)
+		for(int i=0;i<2;i++)  //i->0 ->1
 		{
-			for(int j=0;j<2;j++)
+			for(int j=0;j<2;j++)  //j->0 ->1   //j->0
 			{
 			
-			array1[i][j]=random.nextInt(0,99);
+			array1[i][j]=random.nextInt(0,99);  //arrayi[1][0]=34
 			System.out.println(array1[i][j]);
 			}
 		}

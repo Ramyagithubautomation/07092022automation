@@ -14,7 +14,6 @@
     <fullyQualifiedTypeName name="java.lang.Deprecated"/>
     <fullyQualifiedTypeName name="Variables"/>
     <fullyQualifiedTypeName name="Package1.AccessModifier"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="Package1.Overloading"/>
     <fullyQualifiedTypeName name="Package1.Car"/>
     <fullyQualifiedTypeName name="Package1.Swift"/>
@@ -23,8 +22,12 @@
     <fullyQualifiedTypeName name="Package1.RBIInterface"/>
     <fullyQualifiedTypeName name="Package1.HDFCBank"/>
     <fullyQualifiedTypeName name="Package1.AbstractParentclass"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="FirstPackage.accessmodifiersclass"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="FirstPackage.HDFCBank"/>
+    <fullyQualifiedTypeName name="FirstPackage.RBIBank"/>
 </qualifiedTypeNameHistroy>
