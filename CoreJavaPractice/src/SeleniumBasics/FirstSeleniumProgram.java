@@ -1,5 +1,7 @@
 package SeleniumBasics;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,13 +19,18 @@ public class FirstSeleniumProgram {
 		driver.get("https://www.amazon.com");
 		manage();
 		//gettitle();
-		findElement();
+		//findElement();
+		findElements();
 		//quitandclose();
 	
 	}
 	
 	
 	
+
+	
+
+
 
 	public static void gettitle() {
 		String title=driver.getTitle();
@@ -41,7 +48,7 @@ public class FirstSeleniumProgram {
 		driver.quit();
 	}
 	
-	private static void findElement() {
+	public static void findElement() {
 
 	//WebElement searchbar=driver.findElement(By.id("twotabsearchtextbox")); //return type - WebElement
 	//WebElement searchbar=driver.findElement(By.name("field-keywords"));
@@ -57,6 +64,20 @@ public class FirstSeleniumProgram {
 		
 	//To find the number of elements avaialable in a specific page
 	System.out.println(driver.findElements(By.xpath("//*")).size());
+		
+	}
+	
+	
+	public static void findElements() {
+		// TODO Auto-generated method stub
+	List<WebElement> list1=	driver.findElements(By.xpath("//span[text()='Stuffed Animals & Toys under $10']//ancestor::div[@class='a-section as-title-block']//following-sibling::div//descendant::li"));
+		//return of findelements is a list of webelements
+	for(WebElement ele:list1)
+	{
+		ele.click();
+		driver.navigate().back();
+	}
+		
 		
 	}
 
