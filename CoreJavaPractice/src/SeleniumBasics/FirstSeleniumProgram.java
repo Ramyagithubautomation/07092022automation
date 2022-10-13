@@ -3,9 +3,11 @@ package SeleniumBasics;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class FirstSeleniumProgram {
 	
@@ -16,20 +18,18 @@ public class FirstSeleniumProgram {
 		
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		driver=new ChromeDriver();  //webdriver is not class, it is an interface
-		driver.get("https://www.amazon.com");
+		driver.get("https://demoqa.com/elements");
 		manage();
 		//gettitle();
 		//findElement();
-		findElements();
+		//findElements();
+		//navigation();
 		//quitandclose();
+		//ClickandsendKeys();
+		//Scrolling();
+		DropDown();
 	
 	}
-	
-	
-	
-
-	
-
 
 
 	public static void gettitle() {
@@ -81,8 +81,64 @@ public class FirstSeleniumProgram {
 		
 	}
 
+	public static void navigation() {
+
+		driver.navigate().forward();
+		driver.navigate().back();
+		driver.navigate().to("https://www.amazon.com");	
+		
+	}
 	
 	
+	public static void ClickandsendKeys() {
+		
+		WebElement TextBox=driver.findElement(By.xpath("//span[text()='Text Box']"));
+		
+		TextBox.click();
+		
+		WebElement fullName=driver.findElement(By.xpath("//input[@id='userName']"));
+		fullName.sendKeys("Ramya Mannem");
+		
+		WebElement fullName_label=driver.findElement(By.xpath("//label[@id='userName-label']"));
+		System.out.println(fullName_label.getText());
+	}
+
+	private static void Scrolling() {
+		
+		//scroll down in selenium
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		//js.executeScript("window.scrollBy(0,1000)");
+		
+		//scroll till some element is visible
+		WebElement Widgets=driver.findElement(By.xpath("//div[text()='Widgets']"));
+		js.executeScript("arguments[0].scrollIntoView();", Widgets);
+		Widgets.click();
+		
+	}
+	
+	public static void DropDown()
+	{
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		WebElement Widgets=driver.findElement(By.xpath("//div[text()='Widgets']"));
+		js.executeScript("arguments[0].scrollIntoView();", Widgets);
+		Widgets.click();
+		
+		WebElement SelectMenu=driver.findElement(By.xpath("//span[text()='Select Menu']"));
+		js.executeScript("arguments[0].scrollIntoView();", SelectMenu);
+		SelectMenu.click();
+				
+		WebElement selectDropDown=driver.findElement(By.xpath("//select[@id='oldSelectMenu']"));
+		Select select=new Select(selectDropDown);
+		select.selectByVisibleText("Green");
+		
+		
+		
+		
+		
+		
+	}
+
+
 	
 	
 	
