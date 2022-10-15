@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class FirstSeleniumProgram {
@@ -27,8 +29,9 @@ public class FirstSeleniumProgram {
 		//quitandclose();
 		//ClickandsendKeys();
 		//Scrolling();
-		DropDown();
-	
+		//DropDown();
+	    alert();
+		
 	}
 
 
@@ -127,17 +130,44 @@ public class FirstSeleniumProgram {
 		js.executeScript("arguments[0].scrollIntoView();", SelectMenu);
 		SelectMenu.click();
 				
-		WebElement selectDropDown=driver.findElement(By.xpath("//select[@id='oldSelectMenu']"));
+		/*WebElement selectDropDown=driver.findElement(By.xpath("//select[@id='oldSelectMenu']"));
 		Select select=new Select(selectDropDown);
-		select.selectByVisibleText("Green");
+		select.selectByVisibleText("Green");*/
+		
+		WebElement divtagdropdown=driver.findElement(By.xpath("//div[@class=\" css-yk16xz-control\"]"));
 		
 		
-		
-		
-		
+		//check this thing and update
+		Actions action=new Actions(driver);
+		action.click(divtagdropdown);
+		action.sendKeys(divtagdropdown,"Group 1, option 1");
+		//to press the enter button in keyboard
+		action.sendKeys(Keys.ENTER);	
 		
 	}
 
+	
+	public static void alert()
+	{
+		
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		WebElement alertsandframes=driver.findElement(By.xpath("//div[text()='Alerts, Frame & Windows']"));
+		js.executeScript("arguments[0].scrollIntoView();", alertsandframes);
+		alertsandframes.click();
+		WebElement alerts=driver.findElement(By.xpath("//li[@class=\"btn btn-light \"]//span[text()=\"Alerts\"]"));
+		js.executeScript("arguments[0].scrollIntoView();", alerts);
+		alerts.click();
+		
+		driver.findElement(By.xpath("//button[@id=\"confirmButton\"]")).click();
+		
+		driver.switchTo().alert().getText();
+		
+		String actualvalue=driver.findElement(By.xpath("//span[@id='confirmResult']")).getText();
+		
+		System.out.println(actualvalue);
+		
+		
+	}
 
 	
 	
