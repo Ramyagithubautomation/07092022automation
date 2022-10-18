@@ -1,21 +1,28 @@
 package SeleniumBasics;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.google.common.io.Files;
+
 public class FirstSeleniumProgram {
 	
 	public static WebDriver driver;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
@@ -30,9 +37,19 @@ public class FirstSeleniumProgram {
 		//ClickandsendKeys();
 		//Scrolling();
 		//DropDown();
-	    alert();
+	    //alert();
+		//Windowhandles();
+		Takescreenshot();
 		
 	}
+
+
+	
+
+
+	
+
+
 
 
 	public static void gettitle() {
@@ -142,7 +159,7 @@ public class FirstSeleniumProgram {
 		action.click(divtagdropdown);
 		action.sendKeys(divtagdropdown,"Group 1, option 1");
 		//to press the enter button in keyboard
-		action.sendKeys(Keys.ENTER);	
+		action.sendKeys(Keys.ENTER);		
 		
 	}
 
@@ -165,11 +182,53 @@ public class FirstSeleniumProgram {
 		String actualvalue=driver.findElement(By.xpath("//span[@id='confirmResult']")).getText();
 		
 		System.out.println(actualvalue);
+	}
+
+	public static void Windowhandles() {
+
+		
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		WebElement alertsandframes=driver.findElement(By.xpath("//div[text()='Alerts, Frame & Windows']"));
+		js.executeScript("arguments[0].scrollIntoView();", alertsandframes);
+		alertsandframes.click();
+		WebElement browserwindow=driver.findElement(By.xpath("//li[@class=\"btn btn-light \"]//span[text()=\"Browser Windows\"]"));
+		js.executeScript("arguments[0].scrollIntoView();", browserwindow);
+		browserwindow.click();
+		
+		
+		String parentwindow=driver.getWindowHandle();
+		driver.findElement(By.xpath("//button[@id='windowButton']")).click();
+		Set<String> windows=driver.getWindowHandles();  //duplicates are not allowed in set interface
+		
+		//return type of getwindowhandles method is a set of string of windowids
+		
+		
+		//windows=window1,window2
+		for(String indexwindow:windows)
+		{
+			if(!(indexwindow.equals(parentwindow)))
+			{
+			 driver.switchTo().window(indexwindow);
+			 System.out.println(driver.findElement(By.xpath("//h1[@id=\"sampleHeading\"]")).getText());
+			 driver.switchTo().window(parentwindow);
+			}
+		}
+	}
+	
+	public static void Takescreenshot() throws IOException {
+
+		TakesScreenshot ts=((TakesScreenshot)(driver));
+		
+		File source=ts.getScreenshotAs(OutputType.FILE);
+		
+		File dest=new File("./screenshots.png");
+		
+		Files.copy(source, dest);
+		
 		
 		
 	}
 
-	
 	
 	
 	
