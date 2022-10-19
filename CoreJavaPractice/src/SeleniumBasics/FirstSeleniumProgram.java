@@ -39,16 +39,11 @@ public class FirstSeleniumProgram {
 		//DropDown();
 	    //alert();
 		//Windowhandles();
-		Takescreenshot();
+		//Takescreenshot();
+		//frames();
+		Actionsclass();
 		
 	}
-
-
-	
-
-
-	
-
 
 
 
@@ -156,10 +151,10 @@ public class FirstSeleniumProgram {
 		
 		//check this thing and update
 		Actions action=new Actions(driver);
-		action.click(divtagdropdown);
-		action.sendKeys(divtagdropdown,"Group 1, option 1");
+		action.click(divtagdropdown).build().perform();
+		action.sendKeys(divtagdropdown,"Group 1, option 1").build().perform();
 		//to press the enter button in keyboard
-		action.sendKeys(Keys.ENTER);		
+		action.sendKeys(Keys.ENTER).build().perform();		
 		
 	}
 
@@ -224,13 +219,58 @@ public class FirstSeleniumProgram {
 		File dest=new File("./screenshots.png");
 		
 		Files.copy(source, dest);
+	}
+
+	
+	public static void frames() {
 		
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		WebElement alertsandframes=driver.findElement(By.xpath("//div[text()='Alerts, Frame & Windows']"));
+		js.executeScript("arguments[0].scrollIntoView();", alertsandframes);
+		alertsandframes.click();
+		WebElement frames_menuitem=driver.findElement(By.xpath("//li[@class='btn btn-light ']//span[text()='Frames']"));
+		js.executeScript("arguments[0].scrollIntoView();", frames_menuitem);
+		frames_menuitem.click();
+		driver.switchTo().frame("frame1");
+		
+		System.out.println(driver.findElement(By.xpath("//h1[@id='sampleHeading']")).getText());
+		
+		driver.switchTo().defaultContent();
+		
+		System.out.println(driver.findElement(By.xpath("(//div[@id='framesWrapper']//div)[1]")).getText());
+	}
+
+
+	public static void Actionsclass() {
+
+		
+		JavascriptExecutor js=((JavascriptExecutor)(driver));
+		WebElement Widgets=driver.findElement(By.xpath("//div[text()='Widgets']"));
+		js.executeScript("arguments[0].scrollIntoView();", Widgets);
+		Widgets.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebElement Menu=driver.findElement(By.xpath("//span[text()='Menu']"));
+		js.executeScript("arguments[0].scrollIntoView();", Menu);
+		Menu.click();
+		Actions action=new Actions(driver);
+		action.contextClick().build().perform(); //right click on mouse
+		WebElement menuele=driver.findElement(By.xpath("//a[text()='Main Item 2']"));
+		action.moveToElement(menuele).build().perform();
+		//action.dragAndDro
+		//action.sendKeys(Keys.)
 		
 		
 	}
 
-	
-	
+
+
+
+
 	
 	
 
